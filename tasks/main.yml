@@ -75,3 +75,9 @@
       siesta is compiled and installed in {{ siesta_prefix }}.
       simply run 'siesta'
   when: release_notes is defined and release_notes
+
+- name: Add pseudopotentials
+  include_tasks: pps.yml
+  vars:
+    pp: "{{ item }}"
+  with_items: "{{ siesta_pps }}"
