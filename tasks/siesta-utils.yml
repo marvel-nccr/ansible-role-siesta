@@ -1,5 +1,4 @@
 ---
-# 
 - name: Compile "{{ prog.name }}"
   shell: "make"
   args:
