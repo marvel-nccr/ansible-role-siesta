@@ -36,7 +36,7 @@
 
 - name: copy arch.make
   template:
-    src: arch.make.deb_or_ubuntu
+    src: full_options.make
     dest: "{{ siesta_topdir }}/Obj/arch.make"
 
 - name: Make siesta executables
@@ -144,3 +144,11 @@
          gnubands
          eigfat2plot
   when: release_notes is defined and release_notes
+
+# Process utilities
+- include_tasks: siesta-utils.yml
+  vars:
+    prog: "{{ item }}"
+  with_items: "{{ siesta_utils }}"
+  tags: siesta_utilites
+
