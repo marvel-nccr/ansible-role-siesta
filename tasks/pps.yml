@@ -7,11 +7,12 @@
     mode: "u+r"
   register: pp_download
 
-# - name: "Create {{ pp.folder }}/"
-#   become: true
-#   file:
-#     path: "{{ siesta_data_folder }}/{{ pp.folder }}"
-#     state: directory
+- name: "Create {{ pp.folder }}/"
+  become: true
+  file:
+    path: "{{ siesta_data_folder }}"
+    # path: "{{ siesta_data_folder }}/{{ pp.folder }}"
+    state: directory
 
 - name: "Unpack {{ pp.file }}"
   become: true
@@ -20,6 +21,7 @@
     dest: "{{ siesta_data_folder }}"
     remote_src: true
   register: pp_extract
+  when: pp_download.changed
 
 # permissions in original folder may not be readable
 - name: "Fix permissions"
