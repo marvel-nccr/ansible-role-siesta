@@ -41,12 +41,12 @@ siesta_data_folder: "{{ siesta_prefix }}/share/siesta"
 siesta_url: "https://gitlab.com/siesta-project/siesta/-/archive/{{ siesta_version }}/{{ siesta_src_archive }}"
 siesta_topdir: "{{ siesta_code_folder }}/siesta-{{ siesta_version }}"
 
-siesta_xmlf90_version: "1.5.4"
+siesta_xmlf90_version: "1.5.5"
 siesta_xmlf90_src: xmlf90-{{ siesta_xmlf90_version }}
 siesta_xmlf90_src_archive: "{{ siesta_xmlf90_src }}.tar.gz"
 siesta_xmlf90_code_folder: "/tmp"
 siesta_xmlf90_prefix: "/usr/local"
-siesta_xmlf90_url: "https://launchpad.net/xmlf90/trunk/1.5/+download/xmlf90-1.5.4.tar.gz"
+siesta_xmlf90_url: "https://gitlab.com/siesta-project/libraries/xmlf90/-/archive/{{ siesta_xmlf90_version }}/{{ siesta_xmlf90_src_archive }}"
 siesta_xmlf90_topdir: "{{ siesta_xmlf90_code_folder }}/xmlf90-{{ siesta_xmlf90_version }}"
 
 siesta_libpsml_version: "1.1.10"
@@ -54,7 +54,7 @@ siesta_libpsml_src: libpsml-{{ siesta_libpsml_version }}
 siesta_libpsml_src_archive: "{{ siesta_libpsml_src }}.tar.gz"
 siesta_libpsml_code_folder: "/tmp"
 siesta_libpsml_prefix: "/usr/local"
-siesta_libpsml_url: "https://gitlab.com/siesta-project/libraries/libpsml/uploads/95c4d83d750d1ca87659b6395c8f7ea7/libpsml-1.1.10.tar.gz"
+siesta_libpsml_url: "https://gitlab.com/siesta-project/libraries/libpsml/-/archive/{{ siesta_libpsml_version }}/{{ siesta_libpsml_src_archive }}"
 siesta_libpsml_topdir: "{{ siesta_libpsml_code_folder }}/libpsml-{{ siesta_libpsml_version }}"
 
 # The libxc version (to be used through libgridxc). The (Quantum
@@ -72,7 +72,7 @@ siesta_libgridxc_src: libgridxc-{{ siesta_libgridxc_version }}
 siesta_libgridxc_src_archive: "{{ siesta_libgridxc_src }}.tar.gz"
 siesta_libgridxc_code_folder: "/tmp"
 siesta_libgridxc_prefix: "/usr/local"
-siesta_libgridxc_url: "https://gitlab.com/siesta-project/libraries/libgridxc/uploads/e6e4ec1e3ec648a45b3613e724c7be04/libgridxc-0.9.6.tar.gz"
+siesta_libgridxc_url: "https://gitlab.com/siesta-project/libraries/libgridxc/-/archive/{{ siesta_libgridxc_version }}/{{ siesta_libgridxc_src_archive }}"
 siesta_libgridxc_topdir: "{{ siesta_libgridxc_code_folder }}/libgridxc-{{ siesta_libgridxc_version }}"
 
 siesta_flook_version: "0.8.1"
