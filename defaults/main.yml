@@ -42,7 +42,6 @@ siesta_url: "https://gitlab.com/siesta-project/siesta/-/archive/{{ siesta_versio
 siesta_topdir: "{{ siesta_code_folder }}/siesta-{{ siesta_version }}"
 
 siesta_xmlf90_version: "1.5.4"
-siesta_xmlf90_minor_version: "1.5.4"
 siesta_xmlf90_src: xmlf90-{{ siesta_xmlf90_version }}
 siesta_xmlf90_src_archive: "{{ siesta_xmlf90_src }}.tar.gz"
 siesta_xmlf90_code_folder: "/tmp"
@@ -51,7 +50,6 @@ siesta_xmlf90_url: "https://launchpad.net/xmlf90/trunk/1.5/+download/xmlf90-1.5.
 siesta_xmlf90_topdir: "{{ siesta_xmlf90_code_folder }}/xmlf90-{{ siesta_xmlf90_version }}"
 
 siesta_libpsml_version: "1.1.10"
-siesta_libpsml_minor_version: "1.1.10"
 siesta_libpsml_src: libpsml-{{ siesta_libpsml_version }}
 siesta_libpsml_src_archive: "{{ siesta_libpsml_src }}.tar.gz"
 siesta_libpsml_code_folder: "/tmp"
@@ -59,17 +57,17 @@ siesta_libpsml_prefix: "/usr/local"
 siesta_libpsml_url: "https://gitlab.com/siesta-project/libraries/libpsml/uploads/95c4d83d750d1ca87659b6395c8f7ea7/libpsml-1.1.10.tar.gz"
 siesta_libpsml_topdir: "{{ siesta_libpsml_code_folder }}/libpsml-{{ siesta_libpsml_version }}"
 
-# The libxc version (to be used through libgridxc) The (Quantum
+# The libxc version (to be used through libgridxc). The (Quantum
 # Mobile) libxc role has the installation path hardwired now, and it
 # installs by default the 4.3.4 version. Since it suits us, we set
 # this version here, to save on building time if the libxc role was
-# invoked earlier (see the logic in tasks/libxc.yml)
+# invoked earlier (see the full logic in tasks/libxc.yml, including
+# how we simply install a system package if the distribution is modern enough)
 
 siesta_libxc_version: "4.3.4"
 siesta_libxc_root: "/usr/local/libxc-{{ siesta_libxc_version }}"
 
 siesta_libgridxc_version: "0.9.6"
-siesta_libgridxc_minor_version: "0.9.6"
 siesta_libgridxc_src: libgridxc-{{ siesta_libgridxc_version }}
 siesta_libgridxc_src_archive: "{{ siesta_libgridxc_src }}.tar.gz"
 siesta_libgridxc_code_folder: "/tmp"
@@ -78,7 +76,6 @@ siesta_libgridxc_url: "https://gitlab.com/siesta-project/libraries/libgridxc/upl
 siesta_libgridxc_topdir: "{{ siesta_libgridxc_code_folder }}/libgridxc-{{ siesta_libgridxc_version }}"
 
 siesta_flook_version: "0.8.1"
-siesta_flook_minor_version: "0.8.1"
 siesta_flook_src: flook-{{ siesta_flook_version }}
 siesta_flook_src_archive: "{{ siesta_flook_src }}.tar.gz"
 siesta_flook_code_folder: "/tmp"
@@ -192,7 +189,6 @@ siesta_utils:
 #
 
 siesta_psml_pps_version: "qm"
-siesta_psml_pps_minor_version: "qm"
 siesta_psml_pps_src: psml-files-{{ siesta_psml_pps_version }}
 siesta_psml_pps_src_archive: "{{ siesta_psml_pps_src }}.tar.gz"
 siesta_psml_pps_code_folder: "/tmp"
