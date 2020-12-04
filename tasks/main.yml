@@ -22,6 +22,7 @@
     - liblapack-dev
     - unzip
     - libfftw3-dev
+    - autoconf
 
 # Install and configure libblacs-mpi-dev only for 16.04
 - name: Install and configure libblacs-mpi-dev for older distros

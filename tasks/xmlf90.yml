@@ -16,6 +16,12 @@
     dest: "{{ siesta_xmlf90_code_folder }}"
     remote_src: true
 
+- name: Create xmlf90 configure
+  shell: autoreconf -i
+  args:
+    chdir: "{{ siesta_xmlf90_topdir }}"
+    creates: "{{ siesta_xmlf90_topdir }}/configure"
+
 - name: Configure xmlf90
   command: ./configure --prefix={{ siesta_xmlf90_prefix }}
   args:
