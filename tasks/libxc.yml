@@ -22,11 +22,6 @@
 - name: Use preinstalled or compile libxc for older distros
   block:
 
-  # We have to agree on this!!
-  - name: Define variable
-    set_fact:
-      siesta_libxc_root: "/usr/local/libxc-{{ siesta_libxc_version }}"
-
   - name: Check whether a proper libxc installation already exists
     stat:
       path: "{{ siesta_libxc_root }}"

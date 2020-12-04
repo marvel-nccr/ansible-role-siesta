@@ -6,8 +6,6 @@ siesta_enable_netcdf: "1"
 siesta_enable_ncdf: "1"
 siesta_enable_flook: "1"
 
-# The required libxc version. The libxc role has this hardwired now...
-siesta_libxc_version: "4.3.4"
 #
 run_tests: true
 #--------------------------
@@ -61,6 +59,15 @@ siesta_libpsml_prefix: "/usr/local"
 siesta_libpsml_url: "https://gitlab.com/siesta-project/libraries/libpsml/uploads/95c4d83d750d1ca87659b6395c8f7ea7/libpsml-1.1.10.tar.gz"
 siesta_libpsml_topdir: "{{ siesta_libpsml_code_folder }}/libpsml-{{ siesta_libpsml_version }}"
 
+# The libxc version (to be used through libgridxc) The (Quantum
+# Mobile) libxc role has the installation path hardwired now, and it
+# installs by default the 4.3.4 version. Since it suits us, we set
+# this version here, to save on building time if the libxc role was
+# invoked earlier (see the logic in tasks/libxc.yml)
+
+siesta_libxc_version: "4.3.4"
+siesta_libxc_root: "/usr/local/libxc-{{ siesta_libxc_version }}"
+
 siesta_libgridxc_version: "0.9.6"
 siesta_libgridxc_minor_version: "0.9.6"
 siesta_libgridxc_src: libgridxc-{{ siesta_libgridxc_version }}
@@ -82,7 +89,6 @@ siesta_flook_topdir: "{{ siesta_flook_code_folder }}/flook-{{ siesta_flook_versi
 siesta_xmlf90_root: "{{ siesta_xmlf90_prefix }}"
 siesta_psml_root: "{{ siesta_libpsml_prefix }}"
 siesta_gridxc_root: "{{ siesta_libgridxc_prefix }}"
-siesta_libxc_root: ""
 siesta_flook_root: "{{ siesta_flook_prefix }}"
 siesta_fftw_root: "/usr/lib"
 
